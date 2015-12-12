@@ -320,7 +320,7 @@ class RatingHandler(object):
             }
         """
         from django.http import HttpResponse
-        from django.utils import simplejson as json
+        import json
         score = vote.get_score()
         data = {
             'key': score.key,
