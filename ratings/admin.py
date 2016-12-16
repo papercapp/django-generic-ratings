@@ -17,7 +17,7 @@ class VoteAdmin(admin.ModelAdmin):
         'created_at', 'modified_at')
     list_filter = ('content_type', 'created_at', 'modified_at')
     ordering = ('-modified_at',)
-    search_fields = ('user', 'key')
+    search_fields = ('user__username', 'key')
     readonly_fields = ('user',)
 
 admin.site.register(models.Vote, VoteAdmin)
